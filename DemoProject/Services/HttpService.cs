@@ -2,7 +2,9 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace DemoProject.Services
@@ -27,6 +29,28 @@ namespace DemoProject.Services
             }
 
             return clients;
+        }
+
+        public GalleryModel GetGalleryModels()
+        {
+            GalleryModel gallery = new GalleryModel();
+            try
+            {
+                var assembly = IntrospectionExtensions.GetTypeInfo(typeof(MainPage)).Assembly;
+                Stream stream = assembly.GetManifestResourceStream("DemoProject.Json.Gallery.json");
+                string text = string.Empty;
+                using (var reader = new StreamReader(stream))
+                {
+                    text = reader.ReadToEnd();                    
+                }
+                gallery = JsonConvert.DeserializeObject<GalleryModel>(text);
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return gallery;
         }
     }
 }

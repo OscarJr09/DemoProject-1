@@ -12,6 +12,10 @@
     <FlyoutItem Title="DemoProject"
                 Shell.TabBarIsVisible="False"
                 FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Gallery" 
+                      Icon="photo.png" 
+                      IsTabStop="True" 
+                      ContentTemplate="{DataTemplate views:GalleryView}" />
         <ShellContent Title="Clients" 
                       Icon="account.png" 
                       IsTabStop="True" 

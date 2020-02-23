@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="DemoProject.Views.GalleryView"
+             Title="Gallery">
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0">
+            <ListView ItemsSource="{Binding ImageList}"
+                      IsPullToRefreshEnabled="True" 
+                      x:Name="GalleryListView" 
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" 
+                                         HeightRequest="220"
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Margin="10,10,10,10">
+                                <Label Text="{Binding Id}" 
+                                       FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center"/>
+                                <Image Source="{Binding Link}" 
+                                       HeightRequest="200" 
+                                       WidthRequest="200" />
+                                <Label Text="{Binding Type}"
+                                       TextColor="Gray"
+                                       HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

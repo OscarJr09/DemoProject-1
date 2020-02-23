@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Globalization;
 
 namespace DemoProject.Models
 {
@@ -68,28 +66,5 @@ namespace DemoProject.Models
 
         [JsonProperty("bs")]
         public string Bs { get; set; }
-    }
-
-    public partial class Client
-    {
-        public static Client[] FromJson(string json) => JsonConvert.DeserializeObject<Client[]>(json, Converter.Settings);
-    }
-
-    public static class Serialize
-    {
-        public static string ToJson(this Client[] self) => JsonConvert.SerializeObject(self, Converter.Settings);
-    }
-
-    internal static class Converter
-    {
-        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
-        {
-            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-            DateParseHandling = DateParseHandling.None,
-            Converters =
-            {
-                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
-            },
-        };
     }
 }
