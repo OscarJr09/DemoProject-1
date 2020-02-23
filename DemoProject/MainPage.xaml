@@ -12,7 +12,10 @@
     <FlyoutItem Title="DemoProject"
                 Shell.TabBarIsVisible="False"
                 FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Clients" Icon="account.png" IsTabStop="True" ContentTemplate="{DataTemplate views:ClientView}" />
+        <ShellContent Title="Clients" 
+                      Icon="account.png" 
+                      IsTabStop="True" 
+                      ContentTemplate="{DataTemplate views:ClientView}" />
     </FlyoutItem>
 
 </Shell>

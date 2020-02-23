@@ -19,8 +19,11 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" HeightRequest="100">
-                                <Image Source="user_image.png" HeightRequest="75" WidthRequest="75" />
+                            <StackLayout Orientation="Horizontal" 
+                                         HeightRequest="100">
+                                <Image Source="user_image.png" 
+                                       HeightRequest="75" 
+                                       WidthRequest="75" />
                                 <StackLayout VerticalOptions="Center">
                                     <Label Text="{Binding Name}" 
                                            FontAttributes="Bold" />
