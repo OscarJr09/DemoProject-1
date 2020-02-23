@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoProject.Views.ClientDetailsView">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid HorizontalOptions="FillAndExpand" 
+                  VerticalOptions="Start">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image Aspect="AspectFill"
+                       Source="header_background.jpg"
+                       Opacity="0.6" />
+
+                <Image Source="user_image.png"
+                       HeightRequest="130"
+                       WidthRequest="130"
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"
+                />
+
+                <Label x:Name="clientName"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="End"
+                       TextColor="Black"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       Text="{Binding Name}" 
+                       Margin="0,0,0,10" />
+
+                <StackLayout Orientation="Horizontal" 
+                             HeightRequest="50"
+                             Grid.Row="2"
+                             HorizontalOptions="StartAndExpand"
+                             Margin="10,0,0,0">
+                    <Image Source="phone.png" 
+                           HeightRequest="40" 
+                           WidthRequest="40" />
+                    <Label x:Name="clientMobile"
+                           Text="{Binding Mobile}"
+                           TextColor="Gray"
+                           VerticalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" 
+                             HeightRequest="50"
+                             Grid.Row="3"
+                             HorizontalOptions="StartAndExpand"
+                             Margin="10,0,0,0">
+                    <Image Source="email.png" 
+                           HeightRequest="40" 
+                           WidthRequest="40" />
+                    <Label x:Name="clientEmail"
+                           Text="{Binding Email}"
+                           TextColor="Gray"
+                           VerticalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" 
+                             HeightRequest="50"
+                             Grid.Row="4"
+                             HorizontalOptions="StartAndExpand"
+                             Margin="10,0,0,0">
+                    <Image Source="work.png" 
+                           HeightRequest="40" 
+                           WidthRequest="40" />
+                    <Label x:Name="clientCompany"
+                           Text="{Binding Company}"
+                           TextColor="Gray"
+                           VerticalOptions="Center" />
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" 
+                             HeightRequest="50"
+                             Grid.Row="5"
+                             HorizontalOptions="StartAndExpand"
+                             Margin="10,0,0,0">
+                    <Image Source="website.png" 
+                           HeightRequest="40" 
+                           WidthRequest="40" />
+                    <Label x:Name="clientWebsite"
+                           Text="{Binding Website}"
+                           TextColor="Gray"
+                           VerticalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" 
+                             HeightRequest="50"
+                             Grid.Row="6"
+                             HorizontalOptions="StartAndExpand"
+                             Margin="10,0,0,0">
+                    <Image Source="home.png" 
+                           HeightRequest="40" 
+                           WidthRequest="40" />
+                    <Label x:Name="clientAddress"
+                           Text="{Binding Address}"
+                           TextColor="Gray" 
+                           VerticalOptions="Center" />
+                </StackLayout>
+
+                <Button Grid.Row="7"
+                        Margin="60"
+                        Text="View Location"
+                        HeightRequest="70"
+                        BackgroundColor="LightBlue"
+                        VerticalOptions="End"
+                        x:Name="ViewLocation"
+                        Command="{Binding ViewLocation}" />
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
